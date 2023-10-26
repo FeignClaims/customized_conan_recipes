@@ -1,0 +1,12 @@
+diff --git a/test/any_object_test.cpp b/test/any_object_test.cpp
+index 8485cac..f3eb52e 100644
+--- a/test/any_object_test.cpp
++++ b/test/any_object_test.cpp
+@@ -21,6 +21,7 @@
+ #include <unifex/this.hpp>
+ #include <unifex/type_index.hpp>
+ 
++#include <exception>
+ #include <string>
+ #include <type_traits>
+ 
