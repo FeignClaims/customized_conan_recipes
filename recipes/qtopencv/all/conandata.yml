@@ -1,0 +1,9 @@
+sources:
+  "cci.20200503":
+    url: https://github.com/dbzhang800/QtOpenCV/archive/6545db1c9c2bb5d4ae58df9cf34f8374afe9907b.zip
+    sha256: 9b1128cfe098e8e95d18c273b259d14ff0a421a7a2e575a4f5f34250a1036f27
+patches:
+  "cci.20200503":
+    - patch_file: "patches/use-opencv4.patch"
+      patch_description: "Use opencv4"
+      patch_type: "conan"
