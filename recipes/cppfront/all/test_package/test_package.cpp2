@@ -1,0 +1,13 @@
+main: () -> int = {
+  std::cout << "Hello " << name() << '\n';
+}
+
+name: () -> std::string = {
+  string: std::string = "world";
+  decorate(string);
+  return string;
+}
+
+decorate: (inout string: std::string) = {
+  string = "[" + string + "]";
+}
