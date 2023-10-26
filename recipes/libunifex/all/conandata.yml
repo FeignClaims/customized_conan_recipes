@@ -1,0 +1,9 @@
+sources:
+  "0.4.0":
+    url: "https://github.com/facebookexperimental/libunifex/archive/refs/tags/v0.4.0.zip"
+    sha256: "cea51d8be73681328396018f300b983d15ea897acdf202ec218f7a1bdca42031"
+patches:
+  "0.4.0":
+    - patch_file: "patches/fix-testing.patch"
+      patch_description: "Fix testing"
+      patch_type: "portability"
