@@ -233,9 +233,7 @@ class Llvm(ConanFile):
 
         for project in projects:
             for runtime in runtimes:
-                if project == runtime and self.options.get_safe(
-                        'with_project_' + project, False) and self.options.get_safe(
-                        'with_runtime_' + runtime, False):
+                if project == runtime and self.options.get_safe('with_project_' + project, False) and self.options.get_safe('with_runtime_' + runtime, False):
                     raise ConanInvalidConfiguration(
                         f"Duplicate entry in enabled projects / runtime found for \"with_project_{project}\"")
 
@@ -249,9 +247,10 @@ class Llvm(ConanFile):
 
         if self.options.conan_center_index_limits:
             # XXX conandata.yml is reduced in cci ci to exactly one version so we can't look it up
-            if not str(self.version) in ['13.0.1', '14.0.6', '15.0.7', '16.0.6', '17.0.2']:
+            # 14 needed for a follow up pr, 16 and 17 are identical in requirements
+            if not str(self.version) in ['14.0.6', '17.0.2']:
                 raise ConanInvalidConfiguration(
-                    "llvm version is disabled for conan center index ci because its not the latest patch level in the configuration without the ci would run for multiple days. You can enable it with option conan_center_index_limits=False.")
+                    "llvm version is disabled for conan center index ci. We have a tight ci budget for such a huge recipe. You can enable it with option conan_center_index_limits=False.")
             if self.settings.build_type == "Debug":
                 raise ConanInvalidConfiguration(
                     "LLVM Debug builds are disabled as a workaround of conan center index ci memory limits. You can enable it with option conan_center_index_limits=False.")
@@ -558,6 +557,7 @@ class Llvm(ConanFile):
         external_targets = {
             'libffi::libffi': 'ffi',
             'ZLIB::ZLIB': 'z',
+            'zstd::zstdlib': 'zstd',
             'Iconv::Iconv': 'iconv',
             'libxml2::libxml2': 'xml2',
             'pthread': 'pthread',
@@ -703,6 +703,10 @@ class Llvm(ConanFile):
             if not 'z' in components['LLVMSupport']:
                 components['LLVMSupport'].append('z')
 
+        if self.options.get_safe('with_zstd', False):
+            if not 'zstd' in components['LLVMSupport']:
+                components['LLVMSupport'].append('zstd')
+
         # fix: ERROR: llvm/14.0.6@...: Required package 'libxml2' not in component 'requires'
         xml2_linking = ["LLVMWindowsManifest", "lldbHost", "c-index-test"]
         report_xml2_issue = self.options.with_xml2
@@ -751,6 +755,7 @@ class Llvm(ConanFile):
         external_targets = {
             'ffi': 'libffi::libffi',
             'z': 'zlib::zlib',
+            'zstd': 'zstd::zstdlib',
             'xml2': 'libxml2::libxml2',
             'iconv': 'Iconv::Iconv',
         }
