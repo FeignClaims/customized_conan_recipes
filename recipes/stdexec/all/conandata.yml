@@ -1,0 +1,4 @@
+sources:
+  "cci.20240313":
+    url: "https://github.com/NVIDIA/stdexec/archive/1de56a0e8fb11cb497565fd53c058a8dd39e0e05.zip"
+    sha256: "353b31dcd52d01275847145a15836879ebb96ff52cad877409c689e1c09f8a27"
