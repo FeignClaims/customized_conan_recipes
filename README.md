@@ -1,6 +1,6 @@
 # Customized Conan Recipe
 
-:warning: This repository contains my customized conan recipes.
+This repository contains my customized conan recipes.
 
 ## Why repository?
 
@@ -8,6 +8,16 @@ This repository is intended to benefit from [Adding a folder with conan-center-i
 
 ## Get Started
 
-Currently, you can clone this and run `conan export recipes/<recipe>/all --version <the version specified in 'recipes/<recipe>/config.yml'>` to export the wanted recipe to your conan cache, then run conan normally.
+First, clone this repository locally.
 
-Or better, you can setup [a conan server to manage this](https://docs.conan.io/2/tutorial/conan_repositories.html).
+```bash
+git clone https://github.com/FeignClaims/customized_conan_recipes.git
+```
+
+Then, add this folder as a conan remote:
+
+```bash
+conan remote add <remote_name> <path_to_this_repository> -t local-recipes-index
+```
+
+Or better, you can setup [a conan server to manage this](https://docs.conan.io/2/devops/using_conancenter.html).
