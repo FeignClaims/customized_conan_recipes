@@ -72,8 +72,8 @@ class ClangdHeadersConan(ConanFile):
         self._validate_options_requirements()
 
     def build_requirements(self):
-        self.build_requires("cmake/[>=3.21.3 <4.0.0]")
-        self.build_requires("ninja/[>=1.10.0 <2.0.0]")
+        self.tool_requires("cmake/[>=3.21.3 <4.0.0]")
+        self.tool_requires("ninja/[>=1.10.0 <2.0.0]")
 
     def source(self):
         if self.version == "system":

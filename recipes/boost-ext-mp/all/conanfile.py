@@ -64,7 +64,7 @@ class MpConan(ConanFile):
     def build_requirements(self):
         if self._should_test:
             self.test_requires("boost-ext-ut/1.1.9")
-        self.build_requires("cmake/[>=3.23 <4.0.0]")
+        self.tool_requires("cmake/[>=3.23 <4.0.0]")
 
     def source(self):
         data = self.conan_data["sources"][self.version]

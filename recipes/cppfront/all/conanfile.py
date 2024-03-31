@@ -41,7 +41,7 @@ class CppfrontConan(ConanFile):
             check_min_cppstd(self, self._min_cppstd)
 
     def build_requirements(self):
-        self.build_requires("cmake/[>=3.21.3 <4.0.0]")
+        self.tool_requires("cmake/[>=3.21.3 <4.0.0]")
 
     def source(self):
         get(self, **self.conan_data["sources"][self.version], strip_root=True)
