@@ -23,13 +23,6 @@ class CppfrontConan(ConanFile):
     def _min_cppstd(self):
         return 20
 
-    @property
-    def _compilers_minimum_version(self):
-        return {"msvc": "193",
-                "gcc": "11",
-                "clang": "13",
-                "apple-clang": "14"}
-
     def export_sources(self):
         export_conandata_patches(self)
         copy(self, "CMakeLists.txt", src=self.recipe_folder, dst=self.export_sources_folder)
@@ -42,7 +35,7 @@ class CppfrontConan(ConanFile):
         del self.info.settings.compiler
         del self.info.settings.build_type
 
-    def validate(self):
+    def validate_build(self):
         if self.settings.compiler.get_safe("cppstd"):
             check_min_cppstd(self, self._min_cppstd)
 
