@@ -16,6 +16,7 @@ class CppfrontConan(ConanFile):
     url = "https://github.com/FeignClaims/customized_conan_recipes"
     homepage = 'https://github.com/hsutter/cppfront'
     topics = ("cpp2", "compiler")
+    package_type = "header-library"
     settings = "os", "arch", "compiler", "build_type"
     no_copy_source = True
 
@@ -67,22 +68,7 @@ class CppfrontConan(ConanFile):
         cmake = CMake(self)
         cmake.install()
 
-        filecontents = textwrap.dedent(f"""\
-            if(NOT TARGET cppfront::executable)
-                add_executable(cppfront::executable IMPORTED)
-                set_target_properties(cppfront::executable PROPERTIES IMPORTED_LOCATION {self.package_folder}/bin/cppfront)
-            endif()
-            """)
-        save(self, os.path.join(self.package_folder, "conan_cppfront_executables.cmake"), filecontents)
-
     def package_info(self):
-        self.cpp_info.libdirs = []
         self.cpp_info.set_property("cmake_file_name", "cppfront")
         self.cpp_info.set_property("cmake_target_name", "cppfront::cppfront")
-        self.cpp_info.set_property("cmake_build_modules",
-                                   [os.path.join(self.package_folder, "conan_cppfront_executables.cmake"),
-                                    os.path.join(self.package_folder, "CppfrontHelpers.cmake")])
-
-        self.cpp_info.components["libcppfront"].bindirs = []
-        self.cpp_info.components["libcppfront"].libdirs = []
-        self.cpp_info.components["libcppfront"].set_property("cmake_target_name", "cppfront::libcppfront")
+        self.cpp_info.set_property("cmake_build_modules", [os.path.join(self.package_folder, "CppfrontHelpers.cmake")])

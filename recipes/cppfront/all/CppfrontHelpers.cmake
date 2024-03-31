@@ -66,11 +66,12 @@ function(_cppfront_generate_file file out)
 
   cmake_path(GET absolute_binary_file PARENT_PATH binary_directory)
 
+  find_program(CPPFRONT_EXECUTABLE cppfront)
   add_custom_command(
     OUTPUT ${absolute_binary_file}
     COMMAND ${CMAKE_COMMAND} -E make_directory ${binary_directory}
-    COMMAND cppfront::executable "${absolute_source_file}" -o "${absolute_binary_file}" ${CPPFRONT_FLAGS}
-    DEPENDS cppfront::executable "${absolute_source_file}"
+    COMMAND ${CPPFRONT_EXECUTABLE} "${absolute_source_file}" -o "${absolute_binary_file}" ${CPPFRONT_FLAGS}
+    DEPENDS ${CPPFRONT_EXECUTABLE} "${absolute_source_file}"
     COMMENT "Generating ${absolute_binary_file}"
     VERBATIM
   )
@@ -104,7 +105,7 @@ function(_cppfront_enable_target target)
   list(FILTER cpp2sources INCLUDE REGEX "\\.(cpp|h)2$")
 
   if(cpp2sources)
-    target_link_libraries("${target}" PRIVATE cppfront::libcppfront)
+    target_link_libraries("${target}" PRIVATE cppfront::cppfront)
     get_property(source_dir TARGET "${target}" PROPERTY SOURCE_DIR)
 
     set(cpp2_absolute_sources "")
