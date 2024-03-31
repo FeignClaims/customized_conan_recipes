@@ -20,4 +20,4 @@ Then, add this folder as a conan remote:
 conan remote add <remote_name> <path_to_this_repository> -t local-recipes-index
 ```
 
-Or better, you can setup [a conan server to manage this](https://docs.conan.io/2/devops/using_conancenter.html).
+After that, you are able to install conan packages as usual with these additional recipes.
