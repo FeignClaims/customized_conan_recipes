@@ -66,7 +66,7 @@ function(_cppfront_generate_file file out)
 
   cmake_path(GET absolute_binary_file PARENT_PATH binary_directory)
 
-  find_program(CPPFRONT_EXECUTABLE cppfront)
+  find_program(CPPFRONT_EXECUTABLE cppfront REQUIRED)
   add_custom_command(
     OUTPUT ${absolute_binary_file}
     COMMAND ${CMAKE_COMMAND} -E make_directory ${binary_directory}

@@ -16,6 +16,7 @@ class TestPackageConan(ConanFile):
     def build_requirements(self):
         self.tool_requires("cmake/[>=3.21.3 <4.0.0]")
         self.tool_requires("ninja/[>=1.10.0 <2.0.0]")
+        self.tool_requires(self.tested_reference_str)
 
     def generate(self):
         deps = CMakeDeps(self)
