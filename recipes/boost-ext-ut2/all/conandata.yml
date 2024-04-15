@@ -1,0 +1,4 @@
+sources:
+  "v2.0.0":
+    url: https://github.com/boost-ext/ut2/archive/refs/tags/v2.0.0.tar.gz
+    sha256: 8d12f4d4fcc73632e99c0cb0aa127d8b781b0241c3888b8b56907092339c8f6e
