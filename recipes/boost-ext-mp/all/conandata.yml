@@ -1,4 +1,4 @@
 sources:
-  "cci.20221231":
-    url: "https://github.com/boost-ext/mp.git"
-    commit: "d2dbdf89e543624be8351fd52308a9cf73374dbc"
+  "v1.0.0":
+    url: https://github.com/boost-ext/mp/archive/refs/tags/v1.0.0.tar.gz
+    sha256: c9f861a0c78c79237a29f41eed7d6bb92f5a5fd06212e08733063b498f667f49

@@ -16,5 +16,5 @@ target_link_libraries(test_package
 )
 target_compile_features(test_package
   PRIVATE
-  cxx_std_20
+  cxx_std_17
 )
