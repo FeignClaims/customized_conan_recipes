@@ -21,3 +21,5 @@ conan remote add <remote_name> <path_to_this_repository> -t local-recipes-index
 ```
 
 After that, you are able to install conan packages as usual with these additional recipes.
+
+For more details, read [the official article](https://blog.conan.io/2024/04/23/Introducing-local-recipes-index-remote.html).
