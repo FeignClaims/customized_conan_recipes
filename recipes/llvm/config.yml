@@ -21,6 +21,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 versions:
+  "18.1.4":
+    folder: all
   "17.0.2":
     folder: all
   "16.0.6":
