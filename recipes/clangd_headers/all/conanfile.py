@@ -2,7 +2,7 @@ from conan import ConanFile
 from conan.errors import ConanInvalidConfiguration
 from conan.tools.build import check_min_cppstd
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout
-from conan.tools.files import apply_conandata_patches, export_conandata_patches, get, copy, replace_in_file
+from conan.tools.files import apply_conandata_patches, export_conandata_patches, get, copy, replace_in_file, rmdir
 from conan.tools.scm import Git, Version
 import os
 import glob
@@ -107,6 +107,8 @@ class ClangdHeadersConan(ConanFile):
              pattern="*.h",
              src=os.path.join(self.source_folder, "clang-tools-extra/clangd"),
              dst=os.path.join(self.package_folder, "include/clangd"))
+        rmdir(self,
+              os.path.join(self.package_folder, "include/clangd/unittests"))
         copy(self,
              pattern="*.h",
              src=os.path.join(self.source_folder, "clang-tools-extra/include-cleaner/include/clang-include-cleaner"),
