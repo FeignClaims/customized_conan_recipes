@@ -1,7 +1,7 @@
 sources:
-  "v2.1.1":
+  "2.1.1":
     url: https://github.com/boost-ext/ut2/archive/refs/tags/v2.1.1.tar.gz
     sha256: 9d4bcdaed07fe275918c8e400af5b771e4bd292048b783664012a1afd57c0ec3
-  "v2.0.0":
+  "2.0.0":
     url: https://github.com/boost-ext/ut2/archive/refs/tags/v2.0.0.tar.gz
     sha256: 8d12f4d4fcc73632e99c0cb0aa127d8b781b0241c3888b8b56907092339c8f6e
