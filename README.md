@@ -17,7 +17,7 @@ git clone https://github.com/FeignClaims/customized_conan_recipes.git
 Then, add this folder as a conan remote:
 
 ```bash
-conan remote add <remote_name> <path_to_this_repository> -t local-recipes-index
+conan remote add <remote_name> <path_to_this_repository>
 ```
 
 After that, you are able to install conan packages as usual with these additional recipes.
