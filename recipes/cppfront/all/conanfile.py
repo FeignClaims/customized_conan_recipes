@@ -1,9 +1,9 @@
 from conan import ConanFile
+from conan.errors import ConanInvalidConfiguration
 from conan.tools.build import check_min_cppstd
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout
 from conan.tools.files import apply_conandata_patches, export_conandata_patches, copy, get, rm, save
 import os
-import textwrap
 
 
 required_conan_version = ">=2.0.0"
@@ -36,9 +36,13 @@ class CppfrontConan(ConanFile):
         del self.info.settings.compiler
         del self.info.settings.build_type
 
-    def validate_build(self):
+    def validate(self):
         if self.settings.compiler.get_safe("cppstd"):
             check_min_cppstd(self, self._min_cppstd)
+
+    def validate_build(self):
+        if self.settings.os == 'Macos' and self.settings.compiler == 'clang':
+            raise ConanInvalidConfiguration(f"{self.ref} can't be built by clang on MacOS. Try apple-clang or something else to build it first, then you're free to use.")
 
     def build_requirements(self):
         self.tool_requires("cmake/[>=3.21.3 <4.0.0]")
