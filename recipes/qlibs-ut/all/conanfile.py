@@ -10,12 +10,12 @@ from conan.tools.scm import Version
 required_conan_version = ">=2.0.0"
 
 
-class Ut2Conan(ConanFile):
-    name = "boost-ext-ut2"
-    description = "UT2: C++20 minimal/compile-time first unit-testing library"
+class qlibs_ut_conan(ConanFile):
+    name = "qlibs-ut"
+    description = "UT: C++20 Unit-Testing library"
     license = "BSL-1.0"
     url = "https://github.com/FeignClaims/customized_conan_recipes"
-    homepage = "https://github.com/boost-ext/ut2"
+    homepage = "https://github.com/qlibs/ut"
     topics = ("testing", "compile-time", "run-time", "cpp20", "header-only")
     package_type = "header-library"
     settings = "os", "arch", "compiler", "build_type"
@@ -63,7 +63,7 @@ class Ut2Conan(ConanFile):
              src=self.source_folder,
              dst=os.path.join(self.package_folder, "licenses"))
         copy(self,
-             pattern="ut2",
+             pattern="ut",
              src=self.source_folder,
              dst=os.path.join(self.package_folder, "include"))
 
@@ -71,5 +71,5 @@ class Ut2Conan(ConanFile):
         self.cpp_info.bindirs = []
         self.cpp_info.libdirs = []
 
-        self.cpp_info.set_property("cmake_file_name", "ut2")
-        self.cpp_info.set_property("cmake_target_name", "boost-ext-ut2::ut2")
+        self.cpp_info.set_property("cmake_file_name", "ut")
+        self.cpp_info.set_property("cmake_target_name", "qlibs::ut")

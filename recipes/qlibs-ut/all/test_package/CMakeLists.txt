@@ -3,7 +3,7 @@ project(test_package)
 
 message("building test_package for conan2")
 
-find_package(ut2 CONFIG REQUIRED)
+find_package(ut CONFIG REQUIRED)
 
 add_executable(test_package)
 target_sources(test_package
@@ -12,7 +12,7 @@ target_sources(test_package
 )
 target_link_libraries(test_package
   PRIVATE
-  boost-ext-ut2::ut2
+  qlibs::nut
 )
 target_compile_features(test_package
   PRIVATE
