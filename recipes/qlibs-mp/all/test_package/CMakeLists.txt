@@ -12,9 +12,9 @@ target_sources(test_package
 )
 target_link_libraries(test_package
   PRIVATE
-  boost-ext-mp::mp
+  qlibs::mp
 )
 target_compile_features(test_package
   PRIVATE
-  cxx_std_17
+  cxx_std_20
 )

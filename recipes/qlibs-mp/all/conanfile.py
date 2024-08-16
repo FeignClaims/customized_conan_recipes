@@ -10,26 +10,26 @@ from conan.tools.scm import Version
 required_conan_version = ">=2.0.0"
 
 
-class MpConan(ConanFile):
-    name = "boost-ext-mp"
-    description = "MP: C++17 ~~Template~~ Meta-Programming library"
+class qlibs_mp_conan(ConanFile):
+    name = "qlibs-mp"
+    description = "MP: ~~Template~~ Meta-Programming library"
     license = "BSL-1.0"
     url = "https://github.com/FeignClaims/customized_conan_recipes"
-    homepage = "https://github.com/boost-ext/mp"
-    topics = ("compile-time", "meta-programming", "ranges", "cpp17", "header-only")
+    homepage = "https://github.com/qlibs/mp"
+    topics = ("compile-time", "meta-programming", "ranges", "cpp20", "header-only")
     package_type = "header-library"
     settings = "os", "arch", "compiler", "build_type"
     no_copy_source = True
 
     @property
     def _min_cppstd(self):
-        return 17
+        return 20
 
     @property
     def _compilers_minimum_version(self):
         return {"msvc": "193",
                 "gcc": "12",
-                "clang": "13"}
+                "clang": "15"}
 
     def export_sources(self):
         export_conandata_patches(self)
@@ -73,4 +73,4 @@ class MpConan(ConanFile):
         self.cpp_info.libdirs = []
 
         self.cpp_info.set_property("cmake_file_name", "mp")
-        self.cpp_info.set_property("cmake_target_name", "boost-ext-mp::mp")
+        self.cpp_info.set_property("cmake_target_name", "qlibs::mp")
