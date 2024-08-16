@@ -12,7 +12,7 @@ target_sources(test_package
 )
 target_link_libraries(test_package
   PRIVATE
-  boost-ext-reflect::reflect
+  qlibs::reflect
 )
 target_compile_features(test_package
   PRIVATE

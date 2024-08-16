@@ -1,0 +1,4 @@
+sources:
+  "1.2.2":
+    url: https://github.com/qlibs/reflect/archive/refs/tags/v1.2.2.tar.gz
+    sha256: c4450edfb004ce1b8eeede2d07f4e43cd0a9af355706be95941466fab0e7e3a2

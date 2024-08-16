@@ -10,12 +10,12 @@ from conan.tools.scm import Version
 required_conan_version = ">=2.0.0"
 
 
-class ReflectConan(ConanFile):
-    name = "boost-ext-reflect"
-    description = "C++20 minimal static reflection library"
+class qlibs_reflect_conan(ConanFile):
+    name = "qlibs-reflect"
+    description = "REFLECT: C++20 static reflection library"
     license = "BSL-1.0"
     url = "https://github.com/FeignClaims/customized_conan_recipes"
-    homepage = "https://github.com/boost-ext/reflect"
+    homepage = "https://github.com/qlibs/reflect"
     topics = ("reflection", "meta-programming", "cpp20", "header-only")
     package_type = "header-library"
     settings = "os", "arch", "compiler", "build_type"
@@ -73,4 +73,4 @@ class ReflectConan(ConanFile):
         self.cpp_info.libdirs = []
 
         self.cpp_info.set_property("cmake_file_name", "reflect")
-        self.cpp_info.set_property("cmake_target_name", "boost-ext-reflect::reflect")
+        self.cpp_info.set_property("cmake_target_name", "qlibs::reflect")
