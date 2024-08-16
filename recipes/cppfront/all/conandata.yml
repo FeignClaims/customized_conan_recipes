@@ -1,4 +1,7 @@
 sources:
+  "0.7.3":
+    url: https://github.com/hsutter/cppfront/archive/refs/tags/v0.7.3.zip
+    sha256: d359869274861b98c27bb5a1e587e38a4737bd6842d873900ca3afcfc3bc2ccd
   "0.7.0":
     url: https://github.com/hsutter/cppfront/archive/refs/tags/v0.7.0.zip
     sha256: 9abd14b904176d7e93c09fb906e15506901766792c372e868893fb2d0dd00bbc
