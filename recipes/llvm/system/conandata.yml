@@ -1,4 +1,4 @@
 sources:
   "system":
-    url: https://github.com/FeignClaims/LLVMCMakeTemplate/archive/d2e97a33b1d605f69482b498e15cd8711655c15b.zip
-    sha256: 5f79c5724314226170f5e9e9c8ea96585cdb0ee3499208f9376a5ffcea857767
+    url: https://github.com/FeignClaims/LLVMCMakeTemplate/archive/b5dba2ebf7de2d2d8ab125ee57c2343a768c42b4.zip
+    sha256: c682a52cff806cf5aac65549ef53912dc321b779cffdcb5fc7d5e40a64290ec4
