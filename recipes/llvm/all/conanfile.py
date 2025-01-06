@@ -794,5 +794,5 @@ class Llvm(ConanFile):
                 )
 
         # TODO: to remove in conan v2 once cmake_find_package* generators removed
-        self.cpp_info.names["cmake_find_package"] = "LLVM"
-        self.cpp_info.names["cmake_find_package_multi"] = "LLVM"
+        self.cpp_info.names["cmake_find_package"] = "llvm_conan"
+        self.cpp_info.names["cmake_find_package_multi"] = "llvm_conan"
