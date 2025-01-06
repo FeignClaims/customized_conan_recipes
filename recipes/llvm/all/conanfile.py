@@ -745,7 +745,7 @@ class Llvm(ConanFile):
 
     def package_info(self):
         module_subfolder = os.path.join("lib", "cmake")
-        self.cpp_info.set_property("cmake_file_name", "LLVM")
+        self.cpp_info.set_property("cmake_file_name", "llvm_conan")
 
         components_path = \
             os.path.join(self.package_folder, 'lib', 'components.json')
