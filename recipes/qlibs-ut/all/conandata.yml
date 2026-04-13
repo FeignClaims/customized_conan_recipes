@@ -1,4 +1,4 @@
 sources:
-  "2.1.2":
-    url: https://github.com/qlibs/ut/archive/refs/tags/v2.1.2.zip
-    sha256: 467caf5fc135427825249f2f432dc9858b18273d53170a2483e4017418ec59fb
+  "2.1.6":
+    url: https://github.com/qlibs/ut/archive/refs/tags/v2.1.6.zip
+    sha256: 4c72305ec467dd16129c79973ccdef873091a922fba852aae45fd3d99ca93d79
