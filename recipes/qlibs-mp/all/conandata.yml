@@ -1,4 +1,4 @@
 sources:
-  "2.0.5":
-    url: https://github.com/qlibs/mp/archive/refs/tags/v2.0.5.tar.gz
-    sha256: d770c1a7b22d8d35db4353912035ed434666b7634fdb43ccab07433ef163fd53
+  "2.0.11":
+    url: https://github.com/qlibs/mp/archive/refs/tags/v2.0.11.tar.gz
+    sha256: 3e68ea2ee0eaf5bccbaee1850b950645d8036a68efde5fa5222f81991b5f8559
